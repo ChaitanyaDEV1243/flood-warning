@@ -1,0 +1,46 @@
+{
+  "district_outcomes": [
+    {
+      "district": "Ernakulam",
+      "avg_risk_score": 0.46003333333333335,
+      "max_risk_score": 0.4929,
+      "n_zones": 6,
+      "fatalities": 58,
+      "no_of_camps": 1582,
+      "no_of_landslides": 0,
+      "full_damaged_houses": 615
+    },
+    {
+      "district": "Idukki",
+      "avg_risk_score": 0.34538,
+      "max_risk_score": 0.3756,
+      "n_zones": 5,
+      "fatalities": 54,
+      "no_of_camps": 363,
+      "no_of_landslides": 143,
+      "full_damaged_houses": 1166
+    }
+  ],
+  "rainfall_warning_accuracy": {
+    "exact_match_rate": 0.433,
+    "mean_absolute_level_error": 0.93,
+    "n_observations": 30,
+    "per_district": {
+      "Ernakulam": {
+        "exact_match": 0.333,
+        "mean_off_by": 1.133
+      },
+      "Idukki": {
+        "exact_match": 0.533,
+        "mean_off_by": 0.733
+      }
+    }
+  },
+  "limitations": [
+    "Our GNN predicts risk at 11 zone-level points; ground truth (fatalities, damaged houses, landslides) exists only at district granularity, so validation is zone-aggregated-to-district, not zone-to-zone.",
+    "Only 2 districts (Idukki, Ernakulam) are covered by our 11 zones, so any correlation between avg zone risk and district outcomes is illustrative (n=2), not statistically significant.",
+    "Rainfall validation uses categorical warning levels (Green/Yellow/Orange/Red), not continuous rainfall values, despite the source column names.",
+    "This is a retrospective comparison against the 2018 event, not a live/prospective validation \u2014 the model was not making real-time predictions during the actual event.",
+    "43.3% exact-match should be read as 'directionally useful classification tendency,' not forecasting precision \u2014 mean error of ~1 warning tier is the more honest headline number."
+  ]
+}

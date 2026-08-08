@@ -1,0 +1,33 @@
+{
+  "baseline": {
+    "method": "Greedy / Linear Programming (converged on same result)",
+    "allocation_order": [
+      "Neriamangalam",
+      "Aluva",
+      "Udhyogamandal",
+      "Vembanad Lake",
+      "Munambam"
+    ],
+    "zones_covered": 5,
+    "coverage_value": 11205.717423
+  },
+  "rl": {
+    "method": "RL Agent (PPO)",
+    "allocation_order": [
+      "Vembanad Lake",
+      "Aluva",
+      "Neriamangalam",
+      "Idukki Reservoir",
+      "Munambam"
+    ],
+    "zones_covered": 5
+  },
+  "diff": {
+    "swapped_out": [
+      "Udhyogamandal"
+    ],
+    "swapped_in": [
+      "Idukki Reservoir"
+    ]
+  }
+}
