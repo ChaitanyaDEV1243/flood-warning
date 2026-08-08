@@ -245,7 +245,14 @@ elif page == "2018 Validation":
 # ---------------------------------------------------------------------------
 elif page == "SMS Alert Mock":
     st.title("SMS Alert Flow (Mock)")
-    st.info("Twilio sandbox integration goes here — next step.")
+    st.info(
+        "⚠️ This is a mocked alert flow. Real SMS delivery to Indian numbers "
+        "requires DLT (Distributed Ledger Technology) template registration "
+        "with Indian telecom regulators — a multi-day business verification "
+        "process that isn't feasible within a hackathon timeframe. In "
+        "production, this would be replaced with a registered DLT template "
+        "or routed through WhatsApp Business API, which doesn't require DLT."
+    )
 
     threshold = st.slider("Alert threshold (risk score)", 0.0, 1.0, 0.40, 0.01)
     high_risk = zones[zones["risk_score"] >= threshold].sort_values("risk_score", ascending=False)
